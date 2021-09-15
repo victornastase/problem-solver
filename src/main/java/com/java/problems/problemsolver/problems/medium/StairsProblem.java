@@ -37,11 +37,14 @@ public class StairsProblem {
 
     public int enhancedFibonacciSolution(int n, Map<Integer, Integer> memo) {
         if(memo == null) memo = new HashMap<Integer, Integer>();
+
         if(n == 0) return 1;
         if(n == 1) return 1;
+
         if(memo.containsKey(n)) {
             return memo.get(n);
         }
+
         int result = enhancedFibonacciSolution(n - 1, memo) + enhancedFibonacciSolution(n - 2, memo);
         memo.put(n, result);
         return result;
